@@ -1,11 +1,11 @@
-let string = "string";
-let num = 5;
-let boolean = true;
-let zero = null;
-let F;
+let stringValue = "string";
+let numberValue = 5;
+let booleanValue = true;
+let nullValue = null;
+let undefinedValue;
 
-console.log (string);
-console.log (num);
-console.log (boolean);
-console.log (zero);
-console.log (F);
+console.log (stringValue);
+console.log (numberValue);
+console.log (booleanValue);
+console.log (nullValue);
+console.log (undefinedValue);
