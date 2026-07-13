@@ -1,6 +1,9 @@
 const averageGrade = 87;
 
-switch(true){
+switch(true) {
+    case averageGrade < 0 || averageGrade > 100:
+        console.log('Неправильне значення');
+        break;
     case averageGrade < 60:
         console.log('Незадовільно');
         break;
@@ -16,6 +19,4 @@ switch(true){
     case averageGrade <= 100:
         console.log('Відмінно');
     break;
-    default: 
-        console.log('Неправильне значення');
-};
+}
