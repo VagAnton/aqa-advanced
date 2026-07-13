@@ -8,7 +8,7 @@ console.log (`${answer1}`);
 const Area2 = function(height, width){
     return height * width;
 }
-let answer2 = Area2(5,10)
+let answer2 = Area2(5,10);
 console.log(`${answer2}`);
 
 
