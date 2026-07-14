@@ -1,11 +1,11 @@
-function calculateArea (height, width){
+function calculateArea (height, width) {
         return height * width;
 };
 let answer1 = calculateArea (5, 10);
 console.log (`${answer1}`);
 
 
-const Area2 = function(height, width){
+const Area2 = function(height, width) {
     return height * width;
 }
 let answer2 = Area2(5,10);
