@@ -13,7 +13,7 @@ function divide (numerator, denominator) {
 }
 
 try {
-  console.log(divide(10, 2));
+  console.log(divide(0, 2));
 } catch (error) {
   console.error(error.message);
 } finally {
