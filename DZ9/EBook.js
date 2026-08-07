@@ -12,14 +12,26 @@ export class EBook extends Book {
     }
     
     set format(value) {
-        if (typeof value !== "string") {
-            console.log("The format is invalid");
-            return;
+        if (typeof value !== "string" || !(value = value.trim())) {
+            throw new Error("The format is invalid");
         }
         this.#format = value;
     }
     printInfo() {
         console.log(`The "${this.name}" book was written by ${this.author} on ${this.year}. Can be downloaded in: ${this.format}`);
+    }
+
+    static fromBook(book, format) {
+        if (!(book instanceof Book)) {
+        throw new Error("Argument must be an instance of Book.");
+    }
+    
+        return new EBook(
+            book.name,
+            book.author,
+            book.year,
+            format
+        );
     }
 }
 

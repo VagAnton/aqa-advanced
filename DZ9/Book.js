@@ -12,9 +12,8 @@ export class Book {
     }
     
     set name(value) {
-        if (typeof value !== "string") {
-            console.log("The name is invalid");
-            return;
+        if (typeof value !== "string" || !(value = value.trim())) {
+            throw new Error("The name is invalid");            
         }
         this.#name = value;
     }
@@ -24,9 +23,8 @@ export class Book {
     }
     
     set author(value) {
-        if (typeof value !== "string") {
-            console.log("Author name is inalid");
-            return;
+        if (typeof value !== "string" || !(value = value.trim())) {
+            throw new Error("Author name is invalid");
         }
         this.#author = value;
     }
@@ -37,8 +35,7 @@ export class Book {
     
     set year(value) {
         if (typeof value !== "number" || value < 0) {
-            console.log("Invalid year");
-            return;
+            throw new Error("Invalid year");
         }
         this.#year = value;
     }
@@ -46,6 +43,15 @@ export class Book {
     printInfo() {
         console.log(`The "${this.name}" book was written by ${this.author} on ${this.year}.`);
     }
-}
 
+    static oldestBook(books) {
+        if (!Array.isArray(books) || books.length === 0) {
+            return null;
+        }
+
+        return books.reduce((oldest, current) => {
+            return current.year < oldest.year ? current : oldest;
+        });
+    }
+}
 
